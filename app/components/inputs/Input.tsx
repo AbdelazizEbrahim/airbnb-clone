@@ -1,6 +1,5 @@
 'use client';
 
-import { error } from "console";
 import React from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import { BiDollar } from "react-icons/bi";

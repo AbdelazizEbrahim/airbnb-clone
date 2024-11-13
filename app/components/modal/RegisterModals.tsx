@@ -3,8 +3,8 @@
 import axios from "axios";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { useCallback, useState } from "react";
-import { FieldValue, FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useState } from "react";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from "./Modal";
@@ -36,8 +36,9 @@ const RegisterModals = () => {
     setIsLoading(true);
 
     axios.post('/api/register', data).then(() => {
+      console.log("data: ", data)
       RegisterModal.onClose();
-    }).catch((err) => {
+    }).catch(() => {
       toast.error("Something went wrong")
     }).finally(() => {
       setIsLoading(false);
